@@ -1,2 +1,2 @@
 # Commands & Scripts
-Commands I use for regularly.
+Commands I use regularly.
