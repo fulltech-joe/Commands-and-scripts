@@ -1,2 +1,2 @@
-# UNIX Scripts
-Commands I use regularly. Usually for MDM systems like Mosyle.
+# Commands & Scripts
+Commands I use for regularly.
