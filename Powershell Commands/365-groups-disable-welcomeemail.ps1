@@ -1,8 +1,11 @@
-Step 1: Connect to Office 365
-$session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri "https://outlook.office365.com/powershell-liveid/" -Credential $cred -Authentication Basic -AllowRedirection
+# Connect to Exchange Online
+Connect-ExchangeOnline -UserPrincipalName admin@yourdomain.com
 
-Step 2: Import Session
-Import-PSSession $session
+# Define variable for M365 group name
+$GroupName = "Sales Team"
 
-Disable Email
-Set-UnifiedGroup namebefore@ -UnifiedGroupWelcomeMessageEnabled:$false
+# Disable the welcome message
+Set-UnifiedGroup -Identity $GroupName -UnifiedGroupWelcomeMessageEnabled:$false
+
+# Check if welcome message enabled
+Get-UnifiedGroup -Identity $GroupName | Select-Object Name, DisplayName, PrimarySmtpAddress, WelcomeMessageEnabled
